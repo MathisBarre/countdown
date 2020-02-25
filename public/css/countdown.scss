@@ -11,12 +11,17 @@ body {
   height: 100vh;
   color: var( --black );
   border: 5px solid var(--black);
+  font-size: 16px;
 }
 
 #title {
-  font-size: 4rem;
+  font-size: 4em;
   text-align: center;
-  max-width: 80%;
+  max-width: 90%;
+}
+
+#countdown {
+  text-align: center;
 }
 
 .share {
@@ -25,11 +30,11 @@ body {
   padding: 10px 20px;
   border: solid var( --black ) 1px;
   border-radius: 40px;
-  font-size: 1rem;
+  font-size: 1em;
   font-weight: bold;
   transition-duration: .1s;
   background-color: white;
-  font-size: 0.8rem;
+  font-size: 0.8em;
   color: var( --black );
 
   &:hover {
@@ -38,5 +43,11 @@ body {
 
   &:active {
     transform: scale(0.95);
+  }
+}
+
+@media screen and (max-width: 600px){
+  body {
+    font-size: 10px;
   }
 }
