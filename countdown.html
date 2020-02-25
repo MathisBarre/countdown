@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Countdown</title>
+  <link rel="stylesheet" href="public/css/style.css">
+  <link rel="stylesheet" href="public/css/countdown.css">
+</head>
+<body>
+  <h1 id="title"></h1>
+  <h2 id="countdown"></h2>
+  <button class="share">Copier le lien du compte à rebours</button>
+  <script>
+    function getDateLeft(date) {
+      // Total time left
+      let totalTimeInSeconds = ( date.getTime() - Date.now() ) / ( 1000 )
+      let daysLeft = Math.floor(totalTimeInSeconds /60 /60 /24 )
+      totalTimeInSeconds -= daysLeft * 60 * 60 * 24
+      let hoursLeft = Math.floor(totalTimeInSeconds /60 /60 )
+      totalTimeInSeconds -= hoursLeft * 60 * 60
+      let minutesLeft = Math.floor(totalTimeInSeconds /60 )
+      totalTimeInSeconds -= minutesLeft * 60
+      let secondsLeft = Math.floor(totalTimeInSeconds)
+      return {
+        daysLeft,
+        hoursLeft,
+        minutesLeft,
+        secondsLeft
+      } 
+    }
+
+    function displayDateLeft() {
+      let { daysLeft, hoursLeft, minutesLeft, secondsLeft} = getDateLeft(date)
+      countdownElt.textContent = `${daysLeft} jour(s) ${hoursLeft} heure(s) ${minutesLeft} minute(s) ${secondsLeft} seconde(s)`
+    }
+
+    let params = new URLSearchParams(location.search);
+    let title = params.get('title')
+    let date = new Date(params.get('date'))
+    const titleElt = document.getElementById('title')
+    const countdownElt = document.getElementById('countdown')
+    titleElt.textContent = title
+    displayDateLeft()
+    window.setInterval(displayDateLeft, 1000)
+  </script>
+
+  <script>
+    btnElt = document.getElementsByClassName('share')[0]
+    btnElt.addEventListener('click', copy)
+
+    function copy (){
+      try {
+        navigator.clipboard.writeText(window.location.href).then(() => {
+          btnElt.textContent = "Lien copié avec succès !"
+          btnElt.style.backgroundColor = "#20e217"
+          btnElt.style.color = "white"
+        }, () => {
+          btnElt.textContent = "Le texte n'a pas été copié"
+          btnElt.style.backgroundColor = "red"
+        }); 
+      } catch (error) {
+        console.error(error.message)
+        btnElt.textContent = "Le lien ne peut pas être copié sur ce navigateur, veuillez copier directment depuis la barre d'url"
+        btnElt.style.backgroundColor = "red"
+      }
+    }
+  </script>
+</body>
+</html>

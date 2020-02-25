@@ -1,0 +1,39 @@
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 100vh;
+}
+
+.share {
+  position: absolute;
+  bottom: 0;
+  padding: 20px 40px;
+  border: solid rgba(0, 0, 0, 0.205) 1px;
+  border-bottom: none;
+  border-radius: 10px 10px 0 0;
+  font-size: 1rem;
+  font-weight: bold;
+  -webkit-transition-duration: .1s;
+          transition-duration: .1s;
+}
+
+.share:hover {
+  background-color: #c4c4c4;
+}
+
+.share:active {
+  -webkit-transform: scale(0.95);
+          transform: scale(0.95);
+}
+/*# sourceMappingURL=countdown.css.map */

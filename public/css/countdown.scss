@@ -1,0 +1,30 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.share {
+  position: absolute;
+  bottom: 0;
+  padding: 20px 40px;
+  border: solid rgba(0, 0, 0, 0.205) 1px;
+  border-bottom: none;
+  border-radius: 10px 10px 0 0;
+  font-size: 1rem;
+  font-weight: bold;
+  transition-duration: .1s;
+
+  &:hover {
+    background-color: rgb(196, 196, 196);
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
+}
+body {
+ background-color: rgb(18, 207, 75);
+}
