@@ -1,3 +1,8 @@
+:root {
+  --black: #2E2E2E;
+  --white: #E8E8E8;
+}
+
 body {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -13,23 +18,33 @@ body {
       -ms-flex-direction: column;
           flex-direction: column;
   height: 100vh;
+  color: var(--black);
+  border: 5px solid var(--black);
+}
+
+#title {
+  font-size: 4rem;
+  text-align: center;
+  max-width: 80%;
 }
 
 .share {
   position: absolute;
-  bottom: 0;
-  padding: 20px 40px;
-  border: solid rgba(0, 0, 0, 0.205) 1px;
-  border-bottom: none;
-  border-radius: 10px 10px 0 0;
+  bottom: 15px;
+  padding: 10px 20px;
+  border: solid var(--black) 1px;
+  border-radius: 40px;
   font-size: 1rem;
   font-weight: bold;
   -webkit-transition-duration: .1s;
           transition-duration: .1s;
+  background-color: white;
+  font-size: 0.8rem;
+  color: var(--black);
 }
 
 .share:hover {
-  background-color: #c4c4c4;
+  background-color: #e0e0e0;
 }
 
 .share:active {

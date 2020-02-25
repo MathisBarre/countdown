@@ -53,17 +53,29 @@
       try {
         navigator.clipboard.writeText(window.location.href).then(() => {
           btnElt.textContent = "Lien copié avec succès !"
-          btnElt.style.backgroundColor = "#20e217"
-          btnElt.style.color = "white"
+          btnElt.style.backgroundColor = "#d4edda"
+          btnElt.style.color = "#155724"
+          btnElt.style.borderColor = "#c3e6cb"
         }, () => {
-          btnElt.textContent = "Le texte n'a pas été copié"
-          btnElt.style.backgroundColor = "red"
+          btnElt.textContent = "Une erreur est survenue, le texte n'a pas été copié"
+          btnElt.style.backgroundColor = "#f8d7da"
+          btnElt.style.color = "#831c43"
+          btnElt.style.borderColor = "#f5c6cb"
         }); 
       } catch (error) {
         console.error(error.message)
         btnElt.textContent = "Le lien ne peut pas être copié sur ce navigateur, veuillez copier directment depuis la barre d'url"
-        btnElt.style.backgroundColor = "red"
+        btnElt.style.backgroundColor = "#f8d7da"
+        btnElt.style.color = "#831c43"
+        btnElt.style.borderColor = "#f5c6cb"
       }
+    }
+  </script>
+
+  <script>
+    let color = params.get('color')
+    if(color) {
+      document.documentElement.style.setProperty('--black', color);
     }
   </script>
 </body>
