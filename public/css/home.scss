@@ -8,12 +8,14 @@ body {
 
 .title {
   margin-bottom: 30px;
+  text-align: center;
 }
 
 .form {
   display: flex;
   flex-direction: column;
   width: 500px;
+  max-width: 95vw;
 
   &__input {
     margin-bottom: 10px;

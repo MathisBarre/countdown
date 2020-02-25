@@ -17,6 +17,7 @@ body {
 
 .title {
   margin-bottom: 30px;
+  text-align: center;
 }
 
 .form {
@@ -28,6 +29,7 @@ body {
       -ms-flex-direction: column;
           flex-direction: column;
   width: 500px;
+  max-width: 95vw;
 }
 
 .form__input {
