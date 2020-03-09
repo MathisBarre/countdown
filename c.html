@@ -36,16 +36,20 @@
     }
 
     let params = new URLSearchParams(location.search);
-    let title = params.get('t') // t = title
+    let title = params.get('t')          // t = title
     let date = new Date(params.get('d')) // d = date
-    const titleElt = document.getElementById('title')
-    const countdownElt = document.getElementById('countdown')
-    titleElt.textContent = title
-    displayDateLeft()
-    window.setInterval(displayDateLeft, 1000)
+    let color = params.get('c')          // c = color
+    const titleElt = document.getElementById('title')         // Get elements title
+    const countdownElt = document.getElementById('countdown') // Get elements countdown
+
+    document.documentElement.style.setProperty('--black', color || "black"); // set color
+    titleElt.textContent = title                                             // set title
+    displayDateLeft()                         // display date left
+    window.setInterval(displayDateLeft, 1000) // update  date left every x milliseconds
   </script>
 
   <script>
+    /**************** Gestion du copier ****************/
     btnElt = document.getElementsByClassName('share')[0]
     btnElt.addEventListener('click', copy)
 
@@ -69,13 +73,6 @@
         btnElt.style.color = "#831c43"
         btnElt.style.borderColor = "#f5c6cb"
       }
-    }
-  </script>
-
-  <script>
-    let color = params.get('c') // c = color
-    if(color) {
-      document.documentElement.style.setProperty('--black', color);
     }
   </script>
 </body>
