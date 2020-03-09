@@ -36,8 +36,8 @@
     }
 
     let params = new URLSearchParams(location.search);
-    let title = params.get('title')
-    let date = new Date(params.get('date'))
+    let title = params.get('t') // t = title
+    let date = new Date(params.get('d')) // d = date
     const titleElt = document.getElementById('title')
     const countdownElt = document.getElementById('countdown')
     titleElt.textContent = title
@@ -73,7 +73,7 @@
   </script>
 
   <script>
-    let color = params.get('color')
+    let color = params.get('c') // c = color
     if(color) {
       document.documentElement.style.setProperty('--black', color);
     }
